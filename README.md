@@ -36,7 +36,7 @@ Du findest eine Live Vorschau auf GitHub: [GitHub Live Vorschau](https://w1tch3r
 Du findest das gesamte Projekt auf GitHub: [GitHub Repository](https://github.com/w1tch3r-code/js_movie_db)
 
 ## To Do's
-- Weitere Funktionalitäten hinzufügen (Filme hinzufügen, bearbeiten löschen)
+- Weitere Funktionalitäten hinzufügen (Filme hinzufügen, bearbeiten, löschen)
 
 ## Anmerkungen
 
