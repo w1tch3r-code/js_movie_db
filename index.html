@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Vertiefung – Project Movie DB</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="movie__search__wrapper">
+            <h1>Movies for you</h1>
+            <h2>The best MovieDB</h2>
+            <form onsubmit="return false">
+                <div class="search">
+                    <input type="text" id="movie" name="movie">
+                    <input type="submit" value="Search" id="btnSearch" onclick="search()">
+                </div>
+            </form>
+            <div class="filter">
+                <button type="button" value="YEAR UP" id="btnYearUp" onclick="movieFilter('yearUp')">YEAR UP</button>
+                <button type="button" value="YEAR DOWN" id="btnYearDown" onclick="movieFilter('yearDown')">YEAR DOWN</button>
+                <button type="button" value="BEST RATE" id="btnBestRate" onclick="movieFilter('bestRate')">BEST RATE</button>
+            </div>
+            <article class="errorOutput"></article>
+        </section>
+        <section class="movie__output__wrapper">
+        </section>
+    </div>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

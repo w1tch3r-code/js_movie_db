@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+/* ========================================================== 
+                            Resets
+========================================================== */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+/* ========================================================== 
+                            Fonts
+========================================================== */
+
+@font-face {
+	font-family: "Roboto";
+	src: url("./../fonts/Roboto-Regular.ttf");
+}
+
+/* ========================================================== 
+                        Body und Wrapper
+========================================================== */
+
+body {
+	font-family: "Roboto";
+    background: #FC5731 url('./../images/movie_bg.jpg') center / cover no-repeat fixed;
+    scroll-behavior: smooth;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+	padding-block: 6vh;
+	position: relative;
+}
+
+.wrapper {
+	width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-block: 8vh;
+    border-radius: 20px;
+	position: relative;
+}
+
+.movie__search__wrapper {
+	max-width: 1000px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0) 80%, transparent);
+    padding: 5vh 5% 10vh;
+    margin: 0 auto;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    border-radius: 20px;
+}
+
+.movie__output__wrapper {
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: clamp(550px, 96%, 800px);
+    margin: 1vh auto 0;
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+	background-color: rgba(0, 0, 0, 0.3);
+    gap: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    transition: all 1s ease-in-out;
+	box-shadow: 0 0 10px 1px rgba(252, 86, 49, 0.4);
+}
+
+/* ========================================================== 
+                            Content
+========================================================== */
+
+h1 {
+	font-size: 2.5rem;
+	padding-block-end: 20px;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+
+h2 {
+	font-size: 1.2rem;
+	padding-block-end: 40px;
+	color: white;
+}
+
+form {
+	padding-block-end: 10px;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+form div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+input {
+	padding: 15px;
+	border-radius: 50px;
+	border: none;
+}
+
+input[type="text"] {
+	font-size: 1rem;
+	width: 70%;
+}
+
+input[type="submit"] {
+	background: #FC5731;
+	color: white;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	min-width: 40%;
+	cursor: pointer;
+}
+
+button[type="button"] {
+	padding: 15px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid #FC5731;
+    border-radius: 50px;
+    min-width: 170px;
+    margin: 5px;
+}
+
+.output {
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 90%, rgba(252, 86, 49, 0.5) 10%);
+    padding: 0 0 15px;
+    border-radius: 15px;
+	font-size: 1.1rem;
+	text-align: center;
+	transition: all 1s ease-in-out;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.output h3 {
+	font-size: 1.2rem;
+	padding: 15px 10px;
+	background-color: rgba(255, 255, 255, 0.75);
+	width: 100%;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	min-height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #000;
+	margin-bottom: 20px;
+	border-bottom: 4px solid rgba(252, 86, 49);
+}
+
+.output p {
+	font-size: 0.9rem;
+	line-height: 1.2rem;
+	margin-bottom: 10px;
+	padding-inline: 10px;
+
+}
+
+.output p span {
+	color: rgba(252, 86, 49, 0.9);
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 0.75rem;
+}
+
+.output p:nth-of-type(1), p:nth-of-type(2) {
+	padding-block-end: 10px;
+}
+
+.output p:nth-of-type(2) {
+	font-size: 1.1rem;
+}
+
+.errorOutput {
+	display: none;
+	text-align: center;
+	font-size: 1.1rem;
+	border-radius: 5px;
+	padding: 0 20px;
+	max-width: 550px;
+	margin: 20px auto 0;
+	border: 1px solid #FC5731;
+	border-radius: 20px;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.errorOutput p {
+	color: #FC5731;
+	font-size: 5rem;
+	padding-block-end: 10px;
+}
+
+.errorOutput h3 {
+	color: white;
+	padding-block-end: 20px;
+}
