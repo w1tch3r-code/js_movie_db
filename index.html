@@ -16,13 +16,13 @@
             <form onsubmit="return false">
                 <div class="search">
                     <input type="text" id="movie" name="movie">
-                    <input type="submit" value="Search" id="btnSearch" onclick="search()">
+                    <input type="submit" value="Search" id="btnSearch" onclick="searchMovie()">
                 </div>
             </form>
             <div class="filter">
-                <button type="button" value="YEAR UP" id="btnYearUp" onclick="movieFilter('yearUp')">YEAR UP</button>
-                <button type="button" value="YEAR DOWN" id="btnYearDown" onclick="movieFilter('yearDown')">YEAR DOWN</button>
-                <button type="button" value="BEST RATE" id="btnBestRate" onclick="movieFilter('bestRate')">BEST RATE</button>
+                <button type="button" value="YEAR UP" id="btnYearUp" onclick="filterMovies('yearUp')">YEAR UP</button>
+                <button type="button" value="YEAR DOWN" id="btnYearDown" onclick="filterMovies('yearDown')">YEAR DOWN</button>
+                <button type="button" value="BEST RATE" id="btnBestRate" onclick="filterMovies('bestRate')">BEST RATE</button>
             </div>
             <article class="errorOutput"></article>
         </section>

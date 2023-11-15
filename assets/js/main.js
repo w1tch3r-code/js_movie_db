@@ -4,8 +4,6 @@
 //     				JS-Vertiefung – Project Movie DB
 // ====================================================================
 
-console.log("%c JS-Vertiefung – Project Movie DB", "color: tomato");
-
 // ====================================================================
 //    	 		Movie Array – Movie Array Kopie – Section
 // ====================================================================
@@ -984,7 +982,7 @@ const errorOutput = document.querySelector(".errorOutput");
 //  		Anzeigen der ges. Datenbank beim Laden der Seite
 // ====================================================================
 
-const newArticle = (elem) => {
+const addNewArticle = (elem) => {
 	const newArticle = document.createElement("article");
 	newArticle.innerHTML = `<h3>${elem[0]}</h3>`;
 	newArticle.innerHTML += `<p><span>Year:</span> ${elem[1]}</p>`;
@@ -998,59 +996,48 @@ const newArticle = (elem) => {
 };
 
 movies.forEach((elem) => {
-	newArticle(elem);
+	addNewArticle(elem);
 });
 
 // ====================================================================
 //  			  Suchen eines Films aus dem Movie Array
 // ====================================================================
-
-const search = () => {
-	// Eine Variable, um festzuhalten, ob ein Film gefunden wurde
-	let movieFound = false;
+const searchMovie = () => {
 	const movieInput = document.querySelector("#movie").value;
+	const movieInputLs = movieInput.toLowerCase();
 
 	// Alle vorhandenen Filme aus der Ausgabe löschen
-	while (movieOutputWrapper.firstChild) {
-		movieOutputWrapper.removeChild(movieOutputWrapper.firstChild);
-	}
+	movieOutputWrapper.innerHTML = "";
 
 	// Überprüft, ob der Wert aus "movieInput" innerhalb des movie-Arrays am Index[0] gefunden wird
 	// und führt die Funktion newArticle() aus.
-	movies.filter((elem) => {
-		if (elem[0].includes(movieInput)) {
-			newArticle(elem);
-			// Die Variable wird auf true gesetzt, wenn ein Film gefunden wurde
-			movieFound = true;
+	const matchingMovies = movies.filter((elem) => {
+		if (elem[0].toLowerCase().includes(movieInputLs)) {
+			addNewArticle(elem);
 			errorOutput.style.display = "none";
+			return elem[0];
 		}
 	});
-
-	// Überprüft, ob kein Film gefunden wurde, gibt eine Error-Meldung aus und 
-	// fügt wieder alle Elemente aus dem Movie-Array hinzu
-	if (!movieFound) {
-		errorOutput.style.display = "block";
-		errorOutput.innerHTML = `<p>\u26A0</p>`;
-		errorOutput.innerHTML += `<h3>Der Film "${movieInput}" wurde nicht gefunden.</h3>`;
-		movies.forEach((elem) => {
-			newArticle(elem);
-		});
-	}
+	displayError(matchingMovies, movieInput);
 };
 
 // ====================================================================
 //    Sortierungen des Movie Arrays und Ausgabe über movieOutput()
 // ====================================================================
 
-const movieFilter = (param) => {
-	if (param === 'yearUp') {
+const filterMovies = (sortCondition) => {
+	const movieInput = document.querySelector("#movie");
+	movieInput.value = "";
+
+	if (sortCondition === "yearUp") {
 		sortedMovies.sort((movie1, movie2) => movie1[1] - movie2[1]);
-	} else if (param === 'yearDown') {
+	} else if (sortCondition === "yearDown") {
 		sortedMovies.sort((movie1, movie2) => movie2[1] - movie1[1]);
-	} else if (param === 'bestRate') {
+	} else if (sortCondition === "bestRate") {
 		sortedMovies.sort((movie1, movie2) => movie2[5] - movie1[5]);
 	}
-	movieOutput();
+	showMovies();
+
 	errorOutput.style.display = "none";
 };
 
@@ -1058,14 +1045,29 @@ const movieFilter = (param) => {
 //  	   			Ausgabe des sortierten Arrays
 // ====================================================================
 
-const movieOutput = () => {
+const showMovies = () => {
 	// Alle vorhandenen Filme aus der Ausgabe löschen
-	while (movieOutputWrapper.firstChild) {
-		movieOutputWrapper.removeChild(movieOutputWrapper.firstChild);
-	}
+	movieOutputWrapper.innerHTML = "";
 
 	// Die sortierten Filme der Ausgabe hinzufügen
 	sortedMovies.forEach((elem) => {
-		newArticle(elem);
+		addNewArticle(elem);
 	});
+};
+
+// ====================================================================
+//  	   					Error Meldung
+// ====================================================================
+
+const displayError = (matchingMovies, movieInput) => {
+	// Überprüft, ob kein Film gefunden wurde, gibt eine Error-Meldung aus und
+	// fügt wieder alle Elemente aus dem Movie-Array hinzu
+	if (matchingMovies.length < 1) {
+		errorOutput.style.display = "block";
+		errorOutput.innerHTML = `<p>\u26A0</p>`;
+		errorOutput.innerHTML += `<h3>Der Film ${movieInput} wurde nicht gefunden.</h3>`;
+		movies.forEach((elem) => {
+			addNewArticle(elem);
+		});
+	}
 };

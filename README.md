@@ -7,7 +7,7 @@ Dieses JavaScript-Projekt wurde im Rahmen eines Coding-Bootcamps bei supercode.d
 ### Die Anwendung bietet folgende Möglichkeiten:
 
 - Suche nach einem bestimmten Film
-- Sortierung der Datenbank nach Erscheinungsjahr (aufsteigend/absteigen) und nach der Bewertung
+- Sortierung der Datenbank nach Erscheinungsjahr (aufsteigend/absteigen) und nach der Bewertung absteigend
 
 ## Funktionsweise
 
