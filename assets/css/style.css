@@ -35,48 +35,49 @@ img {
 
 body {
 	font-family: "Roboto";
-    background: #FC5731 url('./../images/movie_bg.jpg') center / cover no-repeat fixed;
-    scroll-behavior: smooth;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+	background: #fc5731 url("./../images/movie_bg.jpg") center / cover no-repeat
+		fixed;
+	scroll-behavior: smooth;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
 	padding-block: 6vh;
 	position: relative;
 }
 
 .wrapper {
 	width: 1200px;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding-block: 8vh;
-    border-radius: 20px;
+	margin: 0 auto;
+	background-color: rgba(0, 0, 0, 0.8);
+	padding-block: 8vh;
+	border-radius: 20px;
 	position: relative;
 }
 
 .movie__search__wrapper {
 	max-width: 1000px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0) 80%, transparent);
-    padding: 5vh 5% 10vh;
-    margin: 0 auto;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    border-radius: 20px;
+	background: linear-gradient(to bottom, rgba(0, 0, 0) 80%, transparent);
+	padding: 5vh 5% 10vh;
+	margin: 0 auto;
+	text-align: center;
+	position: sticky;
+	top: 0;
+	border-radius: 20px;
 }
 
 .movie__output__wrapper {
 	display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: clamp(550px, 96%, 800px);
-    margin: 1vh auto 0;
-    color: rgb(0, 0, 0);
-    font-weight: 900;
+	grid-template-columns: repeat(3, 1fr);
+	width: clamp(550px, 96%, 800px);
+	margin: 1vh auto 0;
+	color: rgb(0, 0, 0);
+	font-weight: 900;
 	background-color: rgba(0, 0, 0, 0.3);
-    gap: 15px;
-    padding: 15px;
-    border-radius: 20px;
-    transition: all 1s ease-in-out;
+	gap: 15px;
+	padding: 15px;
+	border-radius: 20px;
+	transition: all 1s ease-in-out;
 	box-shadow: 0 0 10px 1px rgba(252, 86, 49, 0.4);
 }
 
@@ -100,8 +101,8 @@ h2 {
 
 form {
 	padding-block-end: 10px;
-    max-width: 540px;
-    margin: 0 auto;
+	max-width: 540px;
+	margin: 0 auto;
 }
 
 form div {
@@ -120,10 +121,11 @@ input {
 input[type="text"] {
 	font-size: 1rem;
 	width: 70%;
+	text-align: center;
 }
 
 input[type="submit"] {
-	background: #FC5731;
+	background: #fc5731;
 	color: white;
 	font-weight: bold;
 	letter-spacing: 2px;
@@ -134,22 +136,26 @@ input[type="submit"] {
 
 button[type="button"] {
 	padding: 15px;
-    background: transparent;
-    color: white;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: 1px solid #FC5731;
-    border-radius: 50px;
-    min-width: 170px;
-    margin: 5px;
+	background: transparent;
+	color: white;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	cursor: pointer;
+	border: 1px solid #fc5731;
+	border-radius: 50px;
+	min-width: 170px;
+	margin: 5px;
 }
 
 .output {
-	background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 90%, rgba(252, 86, 49, 0.5) 10%);
-    padding: 0 0 15px;
-    border-radius: 15px;
+	background: linear-gradient(
+		135deg,
+		rgba(0, 0, 0, 0.5) 90%,
+		rgba(252, 86, 49, 0.5) 10%
+	);
+	padding: 0 0 15px;
+	border-radius: 15px;
 	font-size: 1.1rem;
 	text-align: center;
 	transition: all 1s ease-in-out;
@@ -177,7 +183,6 @@ button[type="button"] {
 	line-height: 1.2rem;
 	margin-bottom: 10px;
 	padding-inline: 10px;
-
 }
 
 .output p span {
@@ -187,7 +192,8 @@ button[type="button"] {
 	font-size: 0.75rem;
 }
 
-.output p:nth-of-type(1), p:nth-of-type(2) {
+.output p:nth-of-type(1),
+p:nth-of-type(2) {
 	padding-block-end: 10px;
 }
 
@@ -203,13 +209,13 @@ button[type="button"] {
 	padding: 0 20px;
 	max-width: 550px;
 	margin: 20px auto 0;
-	border: 1px solid #FC5731;
+	border: 1px solid #fc5731;
 	border-radius: 20px;
 	background-color: rgba(0, 0, 0, 0.75);
 }
 
 .errorOutput p {
-	color: #FC5731;
+	color: #fc5731;
 	font-size: 5rem;
 	padding-block-end: 10px;
 }
@@ -217,4 +223,61 @@ button[type="button"] {
 .errorOutput h3 {
 	color: white;
 	padding-block-end: 20px;
+}
+
+/* ========================================================== 
+                        Media Queries
+========================================================== */
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	body {
+		padding-block: 3vh;
+	}
+	.wrapper {
+		padding-block: 3vh;
+	}
+	.movie__output__wrapper {
+		grid-template-columns: repeat(2, 1fr);
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body {
+		padding-block: 2vh;
+	}
+	.wrapper {
+		padding-block: 2vh;
+	}
+	.movie__search__wrapper {
+		position: static;
+	}
+	form div.search {
+		flex-wrap: wrap;
+	}
+	form div.search input[type="text"], [type="submit"] {
+		font-size: 0.9rem;
+		width: 100%;
+		padding: 10px;
+	}
+
+	.movie__search__wrapper div.filter {
+		padding-block-start: 10px;
+	}
+	div.filter button[type="button"] {
+		padding: 10px 15px;
+		width: 100%;
+		margin: 5px 0;
+	}
+
+	h1 {
+		font-size: 1.7rem;
+	}
+	.movie__output__wrapper {
+		grid-template-columns: 1fr;
+		width: auto;
+	}
+	.movie__output__wrapper .errorOutput {
+		grid-column: 1;
+	}
 }
